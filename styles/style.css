@@ -1,0 +1,1586 @@
+*{
+  font-family: 'sf_pro_displaysemibold';
+}
+
+body {
+  background-color: #202020;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh; 
+  margin: 0;
+  padding: 0;
+  font-family: 'sf_pro_displaysemibold';
+}
+
+  ::placeholder{
+    color: #fff;
+    opacity: 0.7;
+  }
+
+/* Make the checkboxes visible
+input[type="checkbox"] {
+  appearance: none;
+  position: relative; 
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-right: 5px; 
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  display: flex;
+  margin: 0.6em 0;
+  align-items: center;
+  color: #9e9e9e;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+
+input[type="checkbox"]:checked + label > span {
+  border: 0.5em solid #FFEB3B;
+  animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+input[type="checkbox"]:checked + label > span:before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0.2em;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+  animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+}
+
+
+@keyframes shrink-bounce {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #212121;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  33% {
+    width: 0.2em;
+    height: 0;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: #212121;
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
+  }
+} */
+
+  .link-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 70px;
+    font-size: 15px;
+    position: fixed;
+    margin-top: 10px;
+    left: 10px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+  }
+  
+  .link-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .link-button:active{
+    transform: scale(0.90);
+  }
+  
+  .drag-n-drop-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 100%;
+    font-size: 15px;
+    left: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+  }
+  
+  .drag-n-drop-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .drag-n-drop-button:active{
+    transform: scale(0.90);
+  }
+  
+
+  /* Add this to change cursor during drag */
+  .bookmark-container[draggable] {
+    cursor: grab;
+  }
+  /* Add this to style the dragged links container */
+  .drag-mode::before {
+    content: "═";
+    margin-right: 10px;
+  }
+
+  /* .equals-symbol {
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 18px;
+  }
+   */
+
+  .box {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 9999;
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 24px );
+  -webkit-backdrop-filter: blur( 24px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  width: 200px;
+  height: 300px;
+  margin-left: 10px;
+  margin-top: 15px;
+  height: 200px;
+  overflow-y: auto; 
+  }
+  
+  .box a {
+  text-decoration: none;
+  color: #fff;
+  }
+
+  .time-container{
+    padding: 70px 10px 25px 10px;
+  }
+  
+  .img-elems{
+  width:30px;
+  border-radius: 15px;
+  }
+  
+  .img-elems-yt{
+  width: 30px;
+  border-radius: 30px;
+  scale: 130%;
+  }
+  
+  .links-container .box {
+  top: 30px;
+  }
+  
+  .date-day-container{
+  position: fixed;
+  top: 10px;
+  color: #fff;
+  font-size: 14px;
+  cursor: default;
+  }
+
+  .clock-time{
+  font-size: 70px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  font-family: 'SFProDisplay-Heavy';
+  }
+  
+  .clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; 
+  }
+  
+  .links-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  }
+  
+  .link-input{
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.658);
+  outline: none;
+  background-color: transparent;
+  color: black;
+  font-family: 'sf_pro_displaysemibold';
+  font-size: 14px;
+  padding: 5px 10px;
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  height: 20px;
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  }
+  
+  .add-bookmark{
+  background: rgba( 255, 255, 255, 0.2 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border:none;
+  border: 1px solid rgba(255, 255, 255, 0.658);
+  height: 30px;
+  width: 30px;
+  font-size: 14px;
+  font-family: 'SFRounded-Semibold';
+  color: #ffffff;
+  margin: 0 auto;
+  }
+  
+  .bookmark-input-container{
+    display: grid;
+    grid-template-columns: 150px 30px;
+    column-gap: 10px;
+    padding: 5px 5px 10px 5px;
+  }
+  
+  .bookmark-container {
+    display: flex;
+    align-items: center;
+    font-size: 16px !important;
+    gap: 5px;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .bookmark-container img {
+    height: 20px;
+    border-radius: 5px;
+  }
+  
+  .bookmark-container a {
+    color: #000;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .bookmark-container:hover{
+    cursor: pointer;
+  }
+  
+  .box {
+    overflow-y: auto;
+    scroll-behavior: smooth; /* Add this line */
+  }
+  
+  .box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+  }
+  
+  .box::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .box::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+  }
+  
+  .bookmark-container div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  #search-input {
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.658);
+  outline: none;
+  color: white;
+  font-family: 'sf_pro_displaysemibold';
+  font-size: 16px;
+  padding: 5px 10px;
+  width: 280px; 
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  height: 25px;
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.1, 1.6);
+  } 
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .background-image-holder {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  
+  #search-input:hover{
+    transform: scale(1.1);
+  }
+  
+  #search-input:focus {
+    transform: scale(1.15);
+  }
+  
+  .search-container{
+    /* width: 300px; */
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  #search-form{
+    display: flex;
+    justify-content: center;
+  }
+  .name-intro{
+  color: #ffffff;
+  font-size: 24px;
+  display: flex;
+  justify-content:center;
+  margin:0;
+  font-family: 'sf_pro_displaybold';
+  cursor: default;
+  }
+  
+  .search-bar-text{
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin:0;
+  font-family: 'SFRounded-Semibold';
+  cursor: default;
+  }
+  
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .icons-container{
+  display: grid;
+  grid-template-rows: 50px 45px 55px 50px;
+  width: 50px;
+  margin:0;
+  }
+  
+  .links-text{
+  display: grid;
+  grid-template-rows: 45px 45px 50px 50px;
+  margin-top: -190px;
+  margin-left: 50px;
+  text-align: left;
+  }
+  
+  #search-form {
+  margin-top: auto;
+  
+  }
+  
+  #bookmark-box.collapsed {
+  display: none;
+  }
+  
+  #toggle-icon {
+  transition: transform 0.3s ease;
+  }
+  
+  #toggle-icon.expand {
+  transform: rotate(0deg);
+  }
+  
+  #toggle-icon.collapse {
+  transform: rotate(180deg);
+  }
+  
+  #bookmark-box.collapsed {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  }
+  
+  #bookmark-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+  
+  #bookmark-box.expanded ul li {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: arrive 0.3s forwards;
+  }
+  
+  #bookmark-box.collapsed ul li {
+  opacity: 1;
+  transform: translateY(0);
+  animation: depart 0.3s forwards;
+  }
+  
+  @keyframes arrive {
+  0% {
+  opacity: 0;
+  transform: translateY(-100%);
+  }
+  100% {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
+  
+  @keyframes depart {
+  0% {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  50% {
+  opacity: 1;
+  transform: translateY(50%);
+  }
+  100% {
+  opacity: 0;
+  transform: translateY(100%);
+  }
+  }
+  
+  #bookmark-box.expanded {
+  height: auto;
+  }
+  
+  body {
+  text-align: center;
+  }
+  
+  button {
+  margin-top: 20px;
+  }
+  
+  .modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  }
+  
+  .modal-content {
+  padding: 10px; 
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 24px );
+  -webkit-backdrop-filter: blur( 24px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  z-index: 9999;
+  height: 300px;
+  overflow-y: auto; 
+  scroll-behavior: smooth; /* Add this line */
+  }
+
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 10px 0px;
+  }
+  
+  .close-notes {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: default;
+  }
+
+  input:active{
+    outline: none;
+  }
+  
+  .close:hover,
+  .close:active {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  }
+  
+  textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: transform 0.3s cubic-bezier(0.3, 0.2, 0.2, 1.6);
+  }
+  
+  textarea:focus{
+    transform: scale(1.05);
+    outline: none;
+  }
+  
+  .modal-buttons {
+  display: flex;
+  justify-content: center;
+  }
+  
+  #notes-container {
+  margin-top: 20px;
+  text-align: left;
+  }
+  
+  .note {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    word-wrap: break-word;
+  }
+
+  .note-content {
+    font-size: 16px !important;
+    inline-size: 320px;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+  }
+
+  .checkbox {
+  margin-right: 10px;
+  }
+  
+  .confirmation-dialog {
+  max-width: 500px;
+  position: relative;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  color: #fff;
+  font-size: 16px !important;
+  }
+  
+  .confirmation-dialog button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 100px;
+  font-size: 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-family: 'SFRounded-Semibold';
+  transition: transform 0.1s ease-in;
+  }
+
+  .delete-button{
+    color: rgb(179, 22, 22);
+  }
+  
+  .delete-button:hover{
+    transform: scale(1.1);
+    color: rgb(212, 28, 28);
+  }
+  
+  .delete-button:active{
+    transform: scale(1.2);
+  }
+    
+  .cancel-button{
+    color: #fff;
+  }
+  
+  .cancel-button:hover{
+    transform: scale(0.96);
+  }
+
+  .cancel-button:active{
+    transform: scale(0.90);
+  }
+    
+  #add-note-btn{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba( 255, 255, 255, 0.2 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border:none;
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  font-family: 'SFRounded-Semibold';
+  color: #ffffff;
+  transition: transform 0.1s ease-in;
+  }
+  
+  #add-note-btn:hover{
+    transform: scale(0.96);
+  }
+  
+  #add-note-btn:active{
+    transform: scale(0.90);
+  }
+  
+  #note-textarea{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 15px;
+  height: 150px;
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  font-family: 'SFRounded-Semibold';
+  margin-bottom: 15px;
+  resize: none;
+  }
+  
+  #save-note-btn, #delete-note-btn, #edit-note-btn{
+  margin-right: 10px;
+  background: rgba( 255, 255, 255, 0.2 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border:none;
+  height: 30px;
+  width: 100px;
+  font-size: 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color:#ffffff;
+  font-family: 'SFRounded-Semibold';
+  margin-left: 10px;
+  transition: transform 0.1s ease-in;
+  }
+
+  #drag-note-btn{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 70px;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+    }
+    
+    #drag-note-btn:hover{
+      transform: scale(0.96);
+    }
+    
+    #drag-note-btn:active{
+      transform: scale(0.90);
+    }
+    
+  
+  #save-note-btn:hover, #delete-note-btn:hover, #edit-note-btn:hover{
+    transform: scale(0.96);
+  }
+  
+  #save-note-btn:active, #delete-note-btn:active, #edit-note-btn:active{
+    transform: scale(0.90);
+  }
+  
+  .change-bg{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#ffffff;
+    font-family: 'SFRounded-Semibold';
+    position: fixed;
+    left: 90px;
+    margin-top: 10px;
+    transition: transform 0.1s ease-in;
+  }
+  
+  .change-bg:hover{
+    transform: scale(0.96);
+  }
+  
+  .change-bg:active{
+    transform: scale(0.90);
+  }
+  
+  .mini-weather{
+    border-radius: 30px;
+    font-size: 16px !important;
+    background-color: lightcoral;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    z-index: 9999;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    color: #fff;
+    position: fixed;
+    right: 50px;
+    cursor: default;
+    margin-top: 10px;
+  }
+  
+  input:focus{
+    outline: none;
+  }
+  
+  .expand-button {
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    width: 40px;
+    height: 30px;
+    transition: transform 0.1s ease-in;
+    position: fixed;
+    right: 5px;
+    margin-top: 20px;
+  }
+  
+  .collapse-button {
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    width: 40px;
+    height: 30px;
+    transition: transform 0.1s ease-in;
+  }
+  
+  .expanded-weather{
+    width: 300px;
+    z-index: 9999;
+    font-size: 16px !important;
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    cursor: default;
+    margin-top: 10px;
+  }
+
+  .expanded-weather h2{
+    font-size: 24px !important;
+  }
+  
+  #locationInput{
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    width: 100px;
+  }
+  
+  .get-weather{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 110px;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    margin-right: 10px;
+    transition: transform 0.1s ease-in;
+  }
+  
+  .get-weather:hover{
+    transform: scale(0.96);
+  }
+  
+  .get-weather:active{
+    transform: scale(0.90);
+  }
+  
+  .top-right-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: -10px;
+  }
+  
+  button:focus{
+    outline: none;
+  }
+  
+  .custom-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 150px;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+  }
+  
+  .custom-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .custom-button:active{
+    transform: scale(0.90);
+  }
+  
+  .bottom-left-corner{
+    bottom: 0;
+    left: 0;
+    position: fixed;
+  }
+  
+  .font-container{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+    backdrop-filter: blur( 24px );
+    -webkit-backdrop-filter: blur( 7px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    bottom: 50px;
+    left: 10px;
+    position: fixed;
+    width: 150px;
+    height: 190px;
+    overflow-y: auto;
+    scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  } 
+ 
+  .font-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  .font-container.hidden {
+    display: none;
+  }
+  
+  .font-option img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+  }
+  
+  .bg-button{
+  background: rgba( 255, 255, 255, 0.2 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border:none;
+  height: 30px;
+  width: 120px;
+  font-size: 15px;
+  font-family: 'SFRounded-Semibold';
+  color: #ffffff;
+  transition: transform 0.1s ease-in;
+  position: fixed;
+  left: 0;
+  margin-left: 10px;
+  }
+  
+  .bg-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .bg-button:active{
+    transform: scale(0.90);
+  }
+  
+  .context-menu {
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+    padding: 4px;
+    z-index: 1;
+    display: none;
+  }
+  
+  .context-menu-option {
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  .context-menu-option:hover {
+    background-color: #ddd;
+  }
+  
+  .custom-font-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 120px;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+    position: fixed;
+    left: 0;
+    margin-left: 10px;
+    top: 120px;
+  }
+  
+  .custom-font-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .custom-font-button:active{
+    transform: scale(0.90);
+  }
+
+  .remove-bg-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 120px;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+    position: fixed;
+    left: 10px;
+    top: 80px;
+  }
+  
+  .remove-bg-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .remove-bg-button:active{
+    transform: scale(0.90);
+  }
+
+  .box-container {
+    display: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+    backdrop-filter: blur( 24px );
+    -webkit-backdrop-filter: blur( 24px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    top: 180px;
+    left: 10px;
+    position: fixed;
+    width: 120px;
+    height: 100px;
+  }
+  
+  .font-option {
+    cursor: pointer;
+    width: 35px;
+    object-fit: cover;
+    margin: 10px;
+  }
+  
+  .font-option.selected-font {
+    background-color: rgba(255, 255, 255, 0.8);
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 24px );
+    -webkit-backdrop-filter: blur( 24px );
+    padding: 3px;
+    border-radius: 5px;
+  }
+  
+  .custom-name-button {
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 120px;
+    font-size: 15px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+    position: fixed;
+    left: 0;
+    margin-left: 10px;
+    top: 40px;
+  }
+  
+  .custom-name-button:hover{
+    transform: scale(0.96);
+  }
+  
+  .custom-name-button:active{
+    transform: scale(0.90);
+  }
+  
+  .input-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+  }
+  
+  #name-input {
+    padding: 10px;
+    width: 120px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000000;
+    font-family: 'sf_pro_displaysemibold';
+  }
+
+  #name-input::placeholder{
+    color: #000;
+    opacity: 0.7;
+  }
+  
+  .show-input {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .copyright-section{
+    position: fixed;
+    bottom: 0;
+    font-size: 10px;
+    color: #ffffff2f;
+    font-family: 'sf_pro_displaysemibold';
+  }
+
+  #delete-links-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 100%;
+    font-size: 15px;
+    left: 0;
+    margin: 0;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+  }
+
+  #delete-links-button:hover{
+    transform: scale(0.96);
+  }
+
+  #delete-links-button:active{
+    transform: scale(0.90);
+  }
+
+  #confirm-delete-button{
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border:none;
+    height: 30px;
+    width: 100%;
+    font-size: 15px;
+    left: 0;
+    margin: 0;
+    margin-top: 5px;
+    font-family: 'SFRounded-Semibold';
+    color: #ffffff;
+    transition: transform 0.1s ease-in;
+  }
+
+  #confirm-delete-button:hover{
+    transform: scale(0.96);
+  }
+
+  #confirm-delete-button:active{
+    transform: scale(0.90);
+  }
+
+  /* Overlay styles */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  max-width: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Add any additional styles for your overlay content here */
+/* CSS for the Remove BG window */
+.remove-bg-window {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.308);
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.remove-bg-content {
+  max-width: 80%;
+  margin: 20px auto;
+  position: relative;
+  padding: 10px; 
+  /* background: rgba( 255, 255, 255, 0.2 ); */
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 24px );
+  -webkit-backdrop-filter: blur( 24px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 9999;
+  overflow-y: auto; 
+  scroll-behavior: smooth; /* Add this line */
+}
+
+/* CSS for the image grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(332px, 1fr)); /* Responsive grid view with max-width 332px */
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center; /* Center the grid items */
+}
+
+/* Checkbox styles */
+.image-item input[type="checkbox"] {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
+  z-index: 2; /* Place the checkbox above the image */
+  cursor: pointer;
+  opacity: 1; /* Make the checkbox visible */
+}
+
+.image-item label {
+  position: relative; /* Use relative positioning for the label */
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.image-item {
+  position: relative;
+  width: 332px; /* Maximum width */
+  height: 187px; /* Maximum height */
+  overflow: hidden; /* Clip images to 332x187px */
+  border-radius: 10px;
+  transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.image-item:hover{
+  transform: scale(1.015)
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+
+/* CSS for the navigation bar */
+.navbar {
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(61, 62, 76, 0.37);
+  backdrop-filter: blur( 24px );
+  -webkit-backdrop-filter: blur( 24px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 9999;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-text {
+  flex: 1; /* Takes the available space */
+  text-align: left;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+/* CSS for responsive image size */
+@media screen and (max-width: 90%) {
+  .image-item {
+    width: 90%; /* Reduce image width to 90% of the container */
+    height: auto; /* Auto height to maintain aspect ratio */
+  }
+  
+  .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure images fit within the 90% width */
+  }
+}
+
+/* CSS for the close and delete buttons (unchanged) */
+.close-button,
+.delete-button {
+  background: rgba( 255, 255, 255, 0.2 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border:none;
+  width: 140px;
+  height: 30px;
+  font-size: 15px;
+  margin: 0;
+  font-family: 'SFRounded-Semibold';
+  color: #ffffff;
+  transition: transform 0.1s ease-in;
+}
+
+.delete-button:hover{
+  transform: scale(0.96);
+}
+
+.close-button hover{
+  transform: scale(0.96);
+}
+
+.delete-button:active{
+  transform: scale(0.90);
+}
+
+.close-button:active{
+  transform: scale(0.90);
+}
+
+.close-button {
+  float: left;
+  width: 30px;
+  margin-left: 10px;
+  transition: transform 0.1s ease-in;
+}
+
+/* @media queries for Responsive */
+@media screen and (max-width: 550px) {
+  .date-day-container{
+    top: 40px;
+  }
+
+  .container{
+    transform: scale(0.7);
+  }
+
+  .image-item{
+    width: 90%;
+  }
+
+  .navbar-text{
+    font-size: 12px;
+  }
+
+  .confirmation-dialog{
+    width: 90%;
+    font-size: 90%;
+  }
+
+  .delete-button,
+  .cancel-button{
+    font-size: 90%;
+  }
+
+  .mini-weather{
+    width: 25%;
+  }
+
+  .mini-location{
+    font-size: 80%;
+  }
+  
+  .expanded-weather{
+    width: 250px;
+    font-size: 14px;
+  }
+
+  .copyright-section{
+    width: 20%;
+    font-size: 20%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+
+  .weather-container{
+    width: 200px;
+    margin-top: 20px;
+    position: fixed;
+    right: -30px;
+  }
+
+  .expanded-weather{
+    position: fixed;
+    right: 10px;
+  }
+
+  .change-bg{
+    position: fixed;
+    left: 10px;
+    top: 40px;
+  }
+
+  .collapse-button{
+    margin-top: 185px;
+    margin-left: 80px;
+  }
+}
+
+.date-day-container{
+  top: 15px;
+}
+
+
+
+@media screen and (max-width: 410px) {
+  .modal-content{
+    width: 90%;
+  }
+
+  .modal-buttons{
+    width: 90%;
+  }
+
+  #delete-note-btn,
+  #save-note-btn,
+  #edit-note-btn{
+    font-size: 14px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+  .name-intro{
+    font-size: 90%;
+  }
+
+  .date-day-container{
+    font-size: 10px;
+  }
+}
+
+body{
+  overflow-y: hidden;
+}
+
+.favorite-links-container {
+  width: 300px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin: 20px 0 0 0;
+  margin: 0 auto;
+}
+
+.favorite-links-container::-webkit-scrollbar {
+  display: none;
+}
+
+.favorite-links-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.favorite-links-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.favorite-link {
+  display: inline-block;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.favorite-link img {
+  display: block;
+  margin: 0 auto;
+  width: 32px;
+  height: 32px;
+}
+
+.favorite-links-bar a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.favorite-links-bar a img{
+  border-radius: 10px;
+}
+
+.favorite-links-bar a div{
+  font-size: 12px;
+  margin-top: 10px;
+}

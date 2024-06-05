@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iWeb</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://ik.imagekit.io/026k2i7ys/iWeb%20Favicon.svg?updatedAt=1700227200100" type="image/svg+xml">
+
+    <!--CDN Script tag-->
+    <script src="js/vibrant.js"></script>
+
+    <!--Link Elements of Stylesheets-->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    
+</head>
+
+<body>
+
+  <div class="date-day-container">
+    <p><span id="currentDay"></span> <span id="currentDate"></span></p>
+  </div>
+
+<div class="container">
+  <div class="time-container">
+    <div class="center">
+      <span id="clock" id="text" class="clock-time"></span>
+      <!-- style="text-shadow: 1px 1.5px rgba(0, 0, 0, 0.434);" -->
+      <p class="name-intro type-animation animating"><span id="quote"></span><span id="custom-name"></span>!</p>
+      <!-- <button id="change-quote-button">Change Quote</button> -->
+    </div>
+
+    <div class="favorite-links-container">
+      <div class="favorite-links-bar" id="favorite-links-bar"></div>
+    </div>
+  
+    <div class="search-container">
+        <label class="search-bar-text" id="search-label"></label>
+        <!-- <button id="change-search-button">Change Manually</button> -->
+        <form id="search-form">
+          <input type="text" id="search-input" autocomplete="on" autofocus="on">
+        </form>
+  </div>
+</div>
+</div>
+
+<div class="links-container">
+<button id="linksButton" class="link-button">Links</button>
+<button class="change-bg">Change BG</button>
+
+<div id="box" class="box">
+
+  <div class="bookmark-input-container">
+    <input type="text" id="bookmark-input" class="link-input" placeholder="Enter URL">
+    <button id="addBookmarkButton" class="add-bookmark">+</button>
+  </div>
+  
+  <div class="links-text-container">
+    <div id="context-menu" class="context-menu"></div>
+  </div>
+  <button id="drag-n-drop-button" class="drag-n-drop-button">Drag 'n Drop</button>
+  <button id="delete-links-button">Delete Links</button>
+  <button id="confirm-delete-button" class="delete-button" style="display: none;">Confirm Delete</button>
+  
+
+</div>
+</div>
+
+<div class="top-right-container">
+    <div class="weather-container">
+        <input type="text" id="locationInput">
+        <button class="get-weather">Get Weather</button>
+        <div id="weatherInfo"></div>
+    </div>
+</div>
+
+<div class="bottom-left-corner">
+
+<button id="customization-button" class="custom-button">Customization ✨</button>
+  
+<div id="font-box-container" class="font-container hidden">
+  
+  <button id="bgButton" class="bg-button">Custom BG</button>
+   <input type="file" id="fileInput" accept=".jpg, .jpeg, .png, .gif" style="display: none">
+   <button id="custom-name-btn" class="custom-name-button">Custom Name</button>
+   <button id="remove-bg-button" class="remove-bg-button">Remove BG</button>
+
+   <button id="fontButton" class="custom-font-button">Custom Font</button>
+
+ <div id="fontBox" class="box-container">
+    <img src="images/svg/12.svg" class="font-option" data-font-family="new_york_extra_largeheavy">
+    <img src="images/svg/12-2.svg" class="font-option" data-font-family="SF-Pro Rails">
+    <img src="images/svg/12-1.svg" class="font-option" data-font-family="sf_pro_-_stencilregular">
+    <img src="images/svg/12-3.svg" class="font-option" data-font-family="SFProDisplay-Heavy">
+</div>
+
+   <div class="input-container" id="input-container">
+        <input type="text" id="name-input" placeholder="Enter your name">
+  </div>
+</div>
+</div>
+
+<div id="remove-bg-window" class="remove-bg-window">
+  <div class="remove-bg-content">
+    <div class="navbar">
+      <p class="navbar-text">Remove Background Images</p>
+      <button id="delete-bg-button" class="delete-button">Delete Selected</button>
+      <button id="close-overlay" class="close-button">×</button>
+    </div>
+
+    <div class="image-grid"></div>
+
+  </div>
+</div>
+
+<div class="copyright-section">
+  <p>&copy; 2024 iWeb. All rights reserved.</p>
+</div>
+
+<div class="notes-box">
+<button id="add-note-btn">Notes</button>
+<div id="note-modal" class="modal">
+<div class="modal-content">
+  <span class="close-notes">&times;</span>
+  <textarea id="note-textarea" placeholder="Type Something..."></textarea>
+  <div id="notes-container" class="custom-scrollbar" id="notes-container"></div>
+  <div class="modal-buttons">
+    <button id="save-note-btn">Save Note</button>
+    <button id="delete-note-btn">Delete Note</button>
+    <button id="edit-note-btn">Edit Note</button>
+    <!-- <button id="drag-note-btn">Drag Note</button> -->
+  </div>
+</div>
+</div>
+</div>
+
+
+<!--JS Code Links-->
+  <script src="js/time.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/date.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/note.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/customization.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/search-bar-text.js"></script>
+  <script src="js/deleteLinks.js"></script>
+  
+</body>
+</html>
